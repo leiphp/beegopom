@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>JSON Form Playground</title>
+    <style>
+      @import url("/static/jsonform/deps/opt/bootstrap.css");
+      @import url("/static/jsonform/deps/opt/bootstrap-wysihtml5.css");
+      @import url("/static/jsonform/deps/opt/spectrum.css");
+
+      h2 { font-weight: 200; margin-top: 0;}
+
+      .tagline {
+        padding: 10px;
+        font-weight: 200;
+        margin-top: -1em;
+      }
+
+      .footer {
+        margin-top: 40px;
+        padding: 10px 0.5em;
+        border-top: 1px solid #E5E5E5;
+      }
+
+      #form .add-on {
+        border: none;
+        background-color: inherit;
+      }
+
+      .expandable > legend:before {
+        content: '\25B8';
+        padding-right: 5px;
+      }
+      .expanded > legend:before {
+        content: '\25BE';
+      }
+
+      ._jsonform-array-buttons {
+        margin-left: 25px;
+      }
+
+      .jsonform-required > label:after {
+        content: ' *';
+        color: red;
+      }
+
+      form.jsonform-hasrequired:after {
+        content: '* Required field';
+        display: block;
+        color: red;
+        padding-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+	<div class="row">
+	<div class="col-md-5">
+		<form id="form" class="form-vertical"></form>
+	</div>
+	<div class="col-md-7">
+		<h2>预览表单</h2>
+	    <div id="result" class="well">(please wait)</div>
+	</div>
+	
+	<script src="/static/jsonform/deps/jquery.min.js"></script>
+	<script src="/static/jsonform/deps/underscore.js"></script>
+	<script src="/static/jsonform/deps/opt/jsv.js"></script>
+	<script src="/static/jsonform/deps/opt/jquery-ui.js"></script>
+	<script src="/static/jsonform/deps/opt/bootstrap-dropdown.js"></script>
+	<script src="/static/jsonform/deps/opt/bootstrap-wysihtml5.js"></script>
+	<script src="/static/jsonform/deps/opt/spectrum.js"></script>
+	<script src="/static/jsonform/deps/opt/ace/ace.js"></script>
+	<script src="/static/jsonform/deps/opt/ace/mode-json.js"></script>
+	<script src="/static/jsonform/deps/opt/ace/mode-html.js"></script>
+	<script src="/static/jsonform/deps/opt/ace/mode-css.js"></script>
+	<script src="/static/jsonform/deps/opt/ace/mode-javascript.js"></script>
+	<script src="/static/jsonform/deps/opt/ace/mode-less.js"></script>
+	<script src="/static/jsonform/deps/opt/ace/mode-markdown.js"></script>
+	<script src="/static/jsonform/deps/opt/jquery.transloadit2.js"></script>
+	
+	<script src="/static/jsonform/lib/jsonform.js"></script>
+	
+	<script src="/static/jsonform/playground/playground.js"></script>
+	
+	
+  </body>
+</html>

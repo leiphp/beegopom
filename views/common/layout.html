@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>XCMS</title>
+  <link rel="stylesheet" href="/static/layui/css/layui.css">
+  <script src="/static/layui/layui.js"></script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+  <div class="layui-header">
+    <div class="layui-logo">XCMS</div>
+    <ul class="layui-nav layui-layout-right">
+      <li class="layui-nav-item">
+        <a href="javascript:;">
+          User
+        </a>
+        <dl class="layui-nav-child">
+          <dd><a href="">退出登录</a></dd>
+        </dl>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="layui-side layui-bg-black">
+    <div class="layui-side-scroll" id="nav" lay-filter="test">
+      <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+      <ul class="layui-nav layui-nav-tree">
+        <li class="layui-nav-item layui-nav-itemed">
+          <a class="" href="javascript:;">系统管理</a>
+          <dl class="layui-nav-child">
+            <dd><a href="/user">用户管理</a></dd>
+			<dd><a href="/menu">菜单管理</a></dd>
+          </dl>
+        </li>
+        {{range .Menu}}
+			<li class="layui-nav-item layui-nav-itemed">
+				<a class="" href="javascript:;">{{.Name}}</a>
+				{{if .Child}}
+					<dl class="layui-nav-child">
+						{{range .Child}}
+							<dd><a href="/data/{{.Mid}}">{{.Name}}</a></dd>
+						{{end}}
+					</dl>
+				{{end}}
+			</li>
+		{{end}}
+      </ul>
+    </div>
+  </div>
+  <div class="layui-body">
+    <!-- 内容主体区域 -->
+    <div style="padding: 15px;">{{.LayoutContent}}</div>
+  </div>
+
+
+  <div class="layui-footer">
+    <!-- 底部固定区域 -->
+    XCMS通用内容管理系统
+  </div>
+</div>
+
+<!--JavaScript代码区域-->
+{{.footerjs}}
+
+
+</body>
+</html>

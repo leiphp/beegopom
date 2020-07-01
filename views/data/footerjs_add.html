@@ -1,0 +1,32 @@
+<script type="text/javascript">
+layui.use(['form', 'layedit'], function(){
+	
+	var createForm = {};
+	createForm.schema={{.Schema}}
+	createForm.form={{.Form}}
+
+	createForm.onSubmitValid = function (values) {
+	        if (console && console.log) {
+	          console.log('Values extracted from submitted form', values);
+	        }
+	        //window.alert('OK Form submitted. Values object:\n' + JSON.stringify(values, null, 2));
+		$.post('/data/adddo/{{.Mid}}',JSON.stringify(values, null, 2),function(result){
+			 //window.alert('return:\n' + JSON.stringify(result, null, 2));
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.layer.close(index); 
+		})
+    	};
+		
+	createForm.onSubmit = function (errors, values) {
+	        if (errors) {
+	          console.log('Validation errors', errors);
+	          return false;
+	        }
+	        return true;
+	};	
+	//window.alert('OK Form submitted. Values object:\n' + JSON.stringify(createForm.form, null, 2));	
+	$('form').jsonForm(createForm);
+
+});
+</script>
+

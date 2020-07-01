@@ -1,0 +1,42 @@
+<form class="layui-form" action="/menu/adddo" lay-filter="example">
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">菜单名</label>
+    <div class="layui-input-block">
+      <input type="text" name="Name" lay-verify="title" autocomplete="off" placeholder="请输入菜单名" class="layui-input">
+    </div>
+  </div>
+
+<!--  <div class="layui-form-item">
+    <label class="layui-form-label">父菜单</label>
+    <div class="layui-input-block">
+      <input type="text" name="Parent" lay-verify="title" autocomplete="off" placeholder="请选择" class="layui-input">
+    </div>
+  </div>-->
+ <div class="layui-form-item">
+    <label class="layui-form-label">父菜单</label>
+    <div class="layui-input-block">
+      <select name="Parent" lay-filter="aihao">
+        <option value=""></option>
+         	{{range $index, $elem := .PMenus}}
+                <option value="{{$elem.Mid}}">{{$elem.Name}}</option>
+             {{end}}
+      </select>
+    </div>
+  </div>
+ 
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">排序(降序)</label>
+    <div class="layui-input-block">
+      <input type="text" name="Seq" lay-verify="title" autocomplete="off" placeholder="请输入序号" class="layui-input">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,55 @@
+<form class="layui-form" action="/user/adddo" lay-filter="example">
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户id</label>
+    <div class="layui-input-block">
+      <input type="text" name="UserKey" lay-verify="title" autocomplete="off" placeholder="用户唯一标示" class="layui-input">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">用户名</label>
+    <div class="layui-input-block">
+      <input type="text" name="UserName" lay-verify="title" autocomplete="off" placeholder="用户昵称" class="layui-input">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">初始密码</label>
+    <div class="layui-input-block">
+      <input type="password" name="Password" lay-verify="title" autocomplete="off" placeholder="初始密码" class="layui-input">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+    <label class="layui-form-label">密码确认</label>
+    <div class="layui-input-block">
+      <input type="password" name="Password1" lay-verify="title" autocomplete="off" placeholder="密码确认" class="layui-input">
+    </div>
+  </div>
+
+  <div class="layui-form-item">
+	<label class="layui-form-label">是否管理员</label>
+	<div class="layui-input-block">
+		<input type="radio" name="IsAdmin" value="0" title="否" checked="">
+		<input type="radio" name="IsAdmin" value="1" title="是">
+	</div>
+  </div>
+
+  <div class="layui-form-item" pane="">
+	<label class="layui-form-label">用户权限</label>
+<!--		<input type="checkbox" name="userauth_1" lay-skin="primary" title="电商" checked="">-->
+		{{range $key,$elem := .Menus}}
+			<input type="checkbox" name="userauth_{{$key}}" lay-skin="primary" title="{{$elem}}">
+		{{end}}
+	<div class="layui-input-block">
+	</div>
+  </div>
+
+  <div class="layui-form-item">
+    <div class="layui-input-block">
+      <button class="layui-btn" lay-submit="" lay-filter="demo1">立即提交</button>
+      <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+        <title>登录</title>
+        <link rel="stylesheet" href="/static/layui/css/layui.css" media="all">
+        <link rel="stylesheet" href="/static/css/login.css" media="all">
+    </head>
+
+    <!--登录超时，跳出框架显示登录页		start-->
+    <script>
+        if(self.location !== top.location){
+            top.location = self.location;
+        }
+    </script>
+    <body>
+        <div class="layui-carousel video_mask bg-img" id="login_carousel" >
+
+            <div class="login layui-anim layui-anim-up">
+                <h1>XCMS管理后台</h1></p>
+                <form class="layui-form" action="" method="post">
+                    <div class="layui-form-item">
+                        <input type="text" name="userkey" lay-verify="required" placeholder="请输入账号" autocomplete="off"  value="{{.userkey}}" class="layui-input">
+                    </div>
+                    <div class="layui-form-item">
+                        <input type="password" name="password" lay-verify="required" placeholder="请输入密码" autocomplete="off" value="" class="layui-input">
+                    </div>
+                    <button class="layui-btn login_btn" lay-submit="" lay-filter="login">登陆</button>
+                </form>
+            </div>
+        </div>
+        <script src="/static/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript">
+            layui.use(['layer','form'], function(){   
+                var layer = layui.layer; //弹层
+                var form = layui.form;
+                var error_info = "{{.flash.error}}";
+                if(error_info){
+                    layer.msg(error_info,{time:2000,offset: '100px'});
+                }
+            })
+        </script>
+    </body>
+</html>
+
+
+

@@ -4,6 +4,7 @@ import (
 	_ "lxtkj/hellobeego/routers"
 	"github.com/astaxie/beego"
 	"github.com/astaxie/beego/logs"
+	_ "lxtkj/hellobeego/sysinit"
 )
 
 func main() {
