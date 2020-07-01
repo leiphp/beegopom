@@ -1,0 +1,5 @@
+2020/07/01 19:18:43.091 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:19:30.568 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:19:30.931 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:19:50.631 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:20:03.939 [I] [router.go:833]  user you loged in
