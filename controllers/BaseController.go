@@ -52,3 +52,21 @@ func (c *BaseController) jsonResult(code consts.JsonResultCode, msg string, obj 
 	c.ServeJSON()
 	c.StopRun()
 }
+
+func (c *BaseController) listJsonResult(code consts.JsonResultCode, msg string, count int64, obj interface{}) {
+	r := &models.ListJsonResult{code, msg, count, obj}
+	c.Data["json"] = r
+	c.ServeJSON()
+	c.StopRun()
+}
+
+func (c *BaseController) auth() models.UserModel {
+	user := c.GetSession("user")
+	if user == nil {
+		c.Redirect("/login", 302)
+		c.StopRun()
+		return models.UserModel{}
+	} else {
+		return user.(models.UserModel)
+	}
+}

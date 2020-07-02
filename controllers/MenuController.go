@@ -1,9 +1,8 @@
 package controllers
 
 import (
-	//"github.com/astaxie/beego/orm"
-	//"lxtkj/hellobeego/models"
 	"github.com/astaxie/beego/orm"
+	"lxtkj/hellobeego/consts"
 	"lxtkj/hellobeego/models"
 )
 
@@ -31,8 +30,7 @@ func (c *MenuController) List() {
 	for _,v := range data {
 		dataEx = append(dataEx, MenuEx{*v, menu[v.Parent]})
 	}
-	//c.listJsonResult(consts.JRCodeSucc, "ok", total, dataEx)
-	c.listJsonResult(200, "ok", total, dataEx)
+	c.listJsonResult(consts.JRCodeSucc, "ok", total, dataEx)
 }
 
 func (c *MenuController) Add() {
