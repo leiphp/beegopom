@@ -1,0 +1,317 @@
+2020/07/01 19:18:43.091 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:19:30.568 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:19:30.931 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:19:50.631 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:20:03.939 [I] [router.go:833]  user you loged in
+2020/07/01 19:23:06.980 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:24:15.175 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:24:56.204 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 19:57:53.358 [I] [router.go:833]  user you loged in
+2020/07/01 20:27:11.693 [I] [router.go:833]  user you loged in
+2020/07/01 20:27:12.539 [I] [router.go:833]  user you loged in
+2020/07/01 20:27:12.723 [I] [router.go:833]  user you loged in
+2020/07/01 20:54:18.579 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 20:54:34.093 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:54:34.093 [C] [panic.go:969]  the request url is  /menu
+2020/07/01 20:54:34.093 [C] [panic.go:969]  Handler crashed with error <Ormer.QueryTable> table name: `menu` not exists
+2020/07/01 20:54:34.093 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:54:34.093 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/orm/orm.go:440
+2020/07/01 20:54:34.093 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/models/MenuModel.go:24
+2020/07/01 20:54:34.093 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/controllers/BaseController.go:22
+2020/07/01 20:54:34.093 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:816
+2020/07/01 20:54:34.093 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:54:34.093 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:54:34.093 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:54:34.094 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:55:10.649 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:55:10.649 [C] [panic.go:969]  the request url is  /menu
+2020/07/01 20:55:10.649 [C] [panic.go:969]  Handler crashed with error <Ormer.QueryTable> table name: `menu` not exists
+2020/07/01 20:55:10.649 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:55:10.649 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/orm/orm.go:440
+2020/07/01 20:55:10.650 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/models/MenuModel.go:24
+2020/07/01 20:55:10.650 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/controllers/BaseController.go:22
+2020/07/01 20:55:10.650 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:816
+2020/07/01 20:55:10.650 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:55:10.650 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:55:10.650 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:55:10.650 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:55:11.627 [I] [asm_amd64.s:1373]  http server Running on http://:8080
+2020/07/01 20:55:27.611 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:57:57.439 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:57:57.536 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:57:57.537 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:57:57.537 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:57:57.537 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:57:57.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:57:57.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:57:57.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:57:57.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:57:57.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:57:57.537 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:57:57.537 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:57:57.537 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:57:57.537 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:58:03.537 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:58:03.537 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:58:03.537 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:58:03.537 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:58:03.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:58:03.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:58:03.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:58:03.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:58:03.537 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:58:03.538 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:58:03.538 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:58:03.538 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:58:03.538 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:58:05.321 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:58:05.369 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:58:05.370 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:58:05.370 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:58:05.370 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:58:05.370 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:58:05.370 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:58:05.370 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:58:05.370 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:58:05.370 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:58:05.370 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:58:05.370 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:58:05.370 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:58:05.370 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:58:12.913 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:58:12.979 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:58:12.979 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:58:12.979 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:58:12.979 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:58:12.979 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:58:12.979 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:58:12.979 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:58:12.979 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:58:12.979 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:58:12.979 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:58:12.979 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:58:12.980 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:58:12.980 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:58:13.193 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:58:13.232 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:58:13.232 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:58:13.232 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:58:13.232 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:58:13.233 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:58:13.233 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:58:13.233 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:58:13.233 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:58:13.233 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:58:13.233 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:58:13.233 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:58:13.233 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:58:13.233 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:58:17.117 [I] [router.go:833]  user you loged in
+2020/07/01 20:58:23.334 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:58:23.389 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:58:23.390 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:58:23.390 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:58:23.390 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:58:23.390 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:58:23.390 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:58:23.390 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:58:23.390 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:58:23.390 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:58:23.390 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:58:23.390 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:58:23.390 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:58:23.390 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:58:51.998 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:58:51.999 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:58:51.999 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:58:51.999 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:58:51.999 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:58:51.999 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:58:51.999 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:58:51.999 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:58:51.999 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:58:51.999 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:58:51.999 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:58:51.999 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:58:52.000 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:58:52.971 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:58:53.018 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:58:53.019 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:58:53.019 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:58:53.019 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:58:53.019 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:58:53.019 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:58:53.019 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:58:53.019 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:58:53.019 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:58:53.019 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:58:53.019 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:58:53.019 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:58:53.019 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:58:54.400 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:58:54.437 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:58:54.438 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:58:54.438 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:58:54.438 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:58:54.438 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:58:54.438 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:58:54.438 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:58:54.438 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:58:54.438 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:58:54.438 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:58:54.438 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:58:54.438 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:58:54.438 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:58:57.743 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:58:57.744 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:58:57.744 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:58:57.744 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:58:57.744 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:58:57.744 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:58:57.744 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:58:57.744 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:58:57.744 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:58:57.744 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:58:57.744 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:58:57.744 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:58:57.744 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:59:02.503 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:59:02.545 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:59:02.546 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:59:02.546 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:59:02.546 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:59:02.546 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:59:02.546 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:59:02.546 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:59:02.546 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:59:02.546 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:59:02.546 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:59:02.546 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:59:02.546 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:59:02.546 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:59:03.264 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:59:03.304 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:59:03.305 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:59:03.305 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:59:03.305 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:59:03.305 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:59:03.305 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:59:03.305 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:59:03.305 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:59:03.305 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:59:03.305 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:59:03.305 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:59:03.305 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:59:03.306 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 20:59:06.361 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 20:59:06.414 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 20:59:06.415 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 20:59:06.415 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 20:59:06.415 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 20:59:06.415 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 20:59:06.415 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 20:59:06.415 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 20:59:06.415 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 20:59:06.415 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 20:59:06.415 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 20:59:06.415 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 20:59:06.415 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 20:59:06.415 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 21:00:39.368 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 21:00:39.430 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 21:00:39.431 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 21:00:39.431 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 21:00:39.431 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 21:00:39.431 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 21:00:39.431 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 21:00:39.431 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 21:00:39.431 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 21:00:39.431 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 21:00:39.431 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 21:00:39.431 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 21:00:39.431 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 21:00:39.431 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 21:00:39.936 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 21:00:39.977 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 21:00:39.977 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 21:00:39.978 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 21:00:39.978 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 21:00:39.978 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 21:00:39.978 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 21:00:39.978 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 21:00:39.978 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 21:00:39.978 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 21:00:39.978 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 21:00:39.978 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 21:00:39.978 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 21:00:39.978 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 21:00:40.126 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 21:00:40.162 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 21:00:40.163 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 21:00:40.163 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 21:00:40.163 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 21:00:40.163 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 21:00:40.163 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 21:00:40.163 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 21:00:40.163 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 21:00:40.163 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 21:00:40.163 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 21:00:40.163 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 21:00:40.163 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 21:00:40.164 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 21:00:40.280 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 21:00:40.317 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 21:00:40.318 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 21:00:40.318 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 21:00:40.318 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 21:00:40.318 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 21:00:40.318 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 21:00:40.318 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 21:00:40.318 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 21:00:40.318 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 21:00:40.318 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 21:00:40.318 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 21:00:40.318 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 21:00:40.318 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 21:00:40.424 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 21:00:40.474 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 21:00:40.475 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 21:00:40.475 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 21:00:40.475 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 21:00:40.475 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 21:00:40.475 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 21:00:40.475 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 21:00:40.475 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 21:00:40.475 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 21:00:40.475 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 21:00:40.475 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 21:00:40.475 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 21:00:40.475 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 21:00:40.567 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 21:00:40.608 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 21:00:40.608 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 21:00:40.608 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 21:00:40.608 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 21:00:40.608 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 21:00:40.609 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 21:00:40.609 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 21:00:40.609 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 21:00:40.609 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 21:00:40.609 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 21:00:40.609 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 21:00:40.609 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 21:00:40.609 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
+2020/07/01 21:01:04.502 [I] [BaseController.go:19]  MenuController Index 
+2020/07/01 21:01:04.553 [I] [BaseController.go:19]  MenuController List 
+2020/07/01 21:01:04.554 [C] [panic.go:969]  the request url is  /menu/list/
+2020/07/01 21:01:04.554 [C] [panic.go:969]  Handler crashed with error can't find templatefile in the path:views/menucontroller/list.tpl
+2020/07/01 21:01:04.554 [C] [panic.go:969]  D:/Go/src/runtime/panic.go:969
+2020/07/01 21:01:04.554 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/template.go:75
+2020/07/01 21:01:04.554 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:306
+2020/07/01 21:01:04.554 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:257
+2020/07/01 21:01:04.554 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/controller.go:237
+2020/07/01 21:01:04.554 [C] [panic.go:969]  H:/goproject/src/lxtkj/hellobeego/vendor/github.com/astaxie/beego/router.go:865
+2020/07/01 21:01:04.554 [C] [panic.go:969]  D:/Go/src/net/http/server.go:2807
+2020/07/01 21:01:04.554 [C] [panic.go:969]  D:/Go/src/net/http/server.go:1895
+2020/07/01 21:01:04.554 [C] [panic.go:969]  D:/Go/src/runtime/asm_amd64.s:1373
+2020/07/01 21:01:04.555 [server.go:3059]  [HTTP] http: superfluous response.WriteHeader call from github.com/astaxie/beego/context.(*Response).WriteHeader (context.go:230)
