@@ -44,7 +44,7 @@ func MenuStruct() map[int]MenuTree {
 }
 
 func MenuList() ([] *MenuModel, int64){
-	query := orm.NewOrm().QueryTable("meun")
+	query := orm.NewOrm().QueryTable("menu")
 	total,_ := query.Count()
 	data := make([]*MenuModel, 0)
 	query.OrderBy("parent", "-seq").All(&data)

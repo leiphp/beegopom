@@ -19,7 +19,7 @@ func init() {
 	beego.Router("/menu/editdo", &controllers.MenuController{}, "*:EditDo")
 	beego.Router("/menu/add", &controllers.MenuController{}, "Get:Add")
 	beego.Router("/menu/adddo", &controllers.MenuController{}, "*:AddDo")
-	beego.Router("/menu/deletedo", &controllers.MenuController{}, "Get:DeleteDo")
+	//beego.Router("/menu/deletedo", &controllers.MenuController{}, "Get:DeleteDo")
 
 	//user
 	//beego.Router("/user", &controllers.UserController{}, "Get:Index")
