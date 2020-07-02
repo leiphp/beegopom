@@ -22,7 +22,7 @@ func (m *MenuModel) TableName() string {
 
 func MenuStruct() map[int]MenuTree {
 	query := orm.NewOrm().QueryTable("menu")
-	data := make([] *MenuModel,0)
+	data := make([]*MenuModel,0)
 	query.OrderBy("parent","-seq").All(&data)
 
 	var menu = make(map[int]MenuTree)

@@ -34,11 +34,24 @@ func (c *MenuController) List() {
 }
 
 func (c *MenuController) Add() {
-
+	var pMenus []models.MenuModel
+	data,_ := models.MenuList()
+	for _,v := range data{
+		if 0==v.Parent{
+			pMenus = append(pMenus, *v)
+		}
+	}
+	c.Data["PMenus"] = pMenus
+	c.LayoutSections = make(map[string]string)
+	c.LayoutSections["footerjs"] = "menu/footerjs_edit.html"
+	c.setTpl("menu/add.html","common/layout_edit.html")
 }
 
 func (c *MenuController) AddDo() {
-
+	var m models.MenuModel
+	if err := c.ParseForm(&m); err==nil{
+		orm.NewOrm().Insert(&m)
+	}
 }
 
 func (c *MenuController) Edit() {
@@ -48,16 +61,16 @@ func (c *MenuController) Edit() {
 	c.Data["Name"] = c.GetString("name")
 
 	var pMenus []models.MenuModel
-	data,_ :=models.MenuList()
+	data,_ := models.MenuList()
 	for _,v := range data{
 		if 0==v.Parent{
 			pMenus = append(pMenus, *v)
 		}
 	}
-
+	c.Data["PMenus"] = pMenus
 	c.LayoutSections = make(map[string]string)
 	c.LayoutSections["footerjs"] = "menu/footerjs_edit.html"
-	c.setTpl("menu/edit.hmtl", "common/layout_edit.html")
+	c.setTpl("menu/edit.html", "common/layout_edit.html")
 }
 
 func (c *MenuController) EditDo() {
