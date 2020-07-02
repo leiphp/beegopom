@@ -20,7 +20,12 @@ func (c *BaseController) Prepare()  {
 	beego.Informational(c.controllerName, c.actionName)
 	//TODO 保存用户数据
 	fmt.Println("beego:perpare"+c.controllerName+","+c.actionName)
+
+	//user := c.auth()//验证登录
 	c.Data["Menu"] = models.MenuStruct()
+	//c.Data["Menu"] = models.MenuTreeStruct(user)
+
+	c.Data["User"] = models.UserStruct()
 }
 
 //设置模板
@@ -60,13 +65,13 @@ func (c *BaseController) listJsonResult(code consts.JsonResultCode, msg string, 
 	c.StopRun()
 }
 
-//func (c *BaseController) auth() models.UserModel {
-//	user := c.GetSession("user")
-//	if user == nil {
-//		c.Redirect("/login", 302)
-//		c.StopRun()
-//		return models.UserModel{}
-//	} else {
-//		return user.(models.UserModel)
-//	}
-//}
+func (c *BaseController) auth() models.UserModel {
+	user := c.GetSession("user")
+	if user == nil {
+		c.Redirect("/login", 302)
+		c.StopRun()
+		return models.UserModel{}
+	} else {
+		return user.(models.UserModel)
+	}
+}

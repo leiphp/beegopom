@@ -18,7 +18,7 @@ func (c *UserController) Index() {
 }
 
 func (c *UserController) List() {
-	result,count := models.MenuList()
+	result,count := models.UserList(10, 1)
 	type UserEx struct {
 		models.UserModel
 		ParentName string
@@ -45,7 +45,7 @@ func (c *UserController) Edit(){
 	if len(user.AuthStr) >0 {
 		var authobj []int
 		json.Unmarshal([]byte(user.AuthStr), &authobj)
-		for _,v = range authobj {
+		for _,v := range authobj {
 			authmap[v] = true
 		}
 	}
