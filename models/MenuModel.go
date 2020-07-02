@@ -51,3 +51,10 @@ func MenuList() ([] *MenuModel, int64){
 	return data,total
 }
 
+func ParentMenuList() []*MenuModel {
+	query := orm.NewOrm().QueryTable("menu").Filter("parent",0)
+	data := make([]*MenuModel,0)
+	query.OrderBy("-seq").All(&data)
+	return data
+}
+
