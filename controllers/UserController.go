@@ -13,7 +13,7 @@ type UserController struct {
 
 func (c *UserController) Index() {
 	c.LayoutSections = make(map[string]string)
-	c.LayoutSections["footerjs"] = "menu/footerjs.html"
+	c.LayoutSections["footerjs"] = "user/footerjs.html"
 	c.setTpl("user/index.html")
 }
 
