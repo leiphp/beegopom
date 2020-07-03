@@ -21,11 +21,10 @@ func (c *BaseController) Prepare()  {
 	//TODO 保存用户数据
 	fmt.Println("beego:perpare"+c.controllerName+","+c.actionName)
 
-	//user := c.auth()//验证登录
-	c.Data["Menu"] = models.MenuStruct()
-	//c.Data["Menu"] = models.MenuTreeStruct(user)
+	user := c.auth()//验证登录
+	//c.Data["Menu"] = models.MenuStruct()
+	c.Data["Menu"] = models.MenuTreeStruct(user)
 
-	//c.Data["User"] = models.UserStruct()
 }
 
 //设置模板
