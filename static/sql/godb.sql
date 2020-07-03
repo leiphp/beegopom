@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
+Source Server         : 本地
 Source Server Version : 50726
 Source Host           : localhost:3306
 Source Database       : godb
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2020-07-03 21:20:40
+Date: 2020-07-04 01:11:31
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -72,4 +72,4 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'aa', 'leixiaotian', '15', '12345', '0');
+INSERT INTO `user` VALUES ('1', 'aa', 'leixiaotian', '[1,5]', '12345', '1');

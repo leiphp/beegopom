@@ -2,7 +2,6 @@ package models
 
 import (
 	"encoding/json"
-	"fmt"
 	"github.com/astaxie/beego/orm"
 	"sort"
 )
@@ -60,12 +59,8 @@ func MenuTreeStruct(user UserModel) map[int]MenuTree {
 	//auth
 	if len(user.AuthStr)>0{
 		var authArr []int
-		fmt.Println(user.AuthStr)
-		fmt.Println([]byte(user.AuthStr))
 		json.Unmarshal([]byte(user.AuthStr), &authArr)
-		fmt.Println(authArr)
 		sort.Ints(authArr)
-		fmt.Println(authArr)
 
 		for _,v := range data{
 			if 0==v.Parent {

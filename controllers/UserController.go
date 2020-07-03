@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
 	"github.com/astaxie/beego/orm"
 	"lxtkj/hellobeego/consts"
 	"lxtkj/hellobeego/models"
@@ -44,10 +45,13 @@ func (c *UserController) Edit(){
 	authmap := make(map[int]bool)
 	if len(user.AuthStr) >0 {
 		var authobj []int
-		json.Unmarshal([]byte(user.AuthStr), &authobj)
+		str := []byte(user.AuthStr)//user.AuthStr格式"[1,5]"
+		json.Unmarshal(str, &authobj)
+		fmt.Println(authobj)//[1.5]切片
 		for _,v := range authobj {
 			authmap[v] = true
 		}
+		fmt.Println(authmap)//map[1:true 5:true]
 	}
 	type Menuitem struct {
 		Name string
