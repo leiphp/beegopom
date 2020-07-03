@@ -22,8 +22,8 @@ func (c *LoginController) Index(){
 		if len(userkey) > 0 && len(password) >0 {
 			//password := utils.Md5([]byte(password))//通过utils工具md5密码加密
 			user := models.GetUserByName(userkey)
-			//if password == user.PassWord{//跟数据库总加密后的密码做比较
-			if password == "123456"{//跟数据库总加密后的密码做比较
+			fmt.Println(user)
+			if password == user.PassWord{//跟数据库总加密后的密码做比较
 				c.SetSession("user",user)
 				c.Redirect("/",302)
 				//c.StopRun()

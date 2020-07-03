@@ -36,8 +36,8 @@ func UserList(pageSize, page int) ([]*UserModel, int64){
 
 
 func GetUserByName(userkey string) UserModel{
-	user := UserModel{UserKey:userkey}
 	o := orm.NewOrm()
-	o.Read(&user)
+	user := UserModel{UserKey:userkey}
+	o.Read(&user,"user_key")
 	return user
 }
