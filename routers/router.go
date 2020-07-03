@@ -7,10 +7,10 @@ import (
 
 func init() {
 	//主页
-    beego.Router("/", &controllers.MainController{})
+    //beego.Router("/", &controllers.MainController{})//这个路由会重置session
 
 	//home
-	//beego.Router("/", &controllers.HomeController{}, "Get:Index")
+	beego.Router("/", &controllers.HomeController{}, "Get:Index")
 
 	//menu
 	beego.Router("/menu", &controllers.MenuController{}, "Get:Index")
