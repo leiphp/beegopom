@@ -61,7 +61,7 @@ func (c *UserController) Edit(){
 	}
 	c.Data["Menus"] = menus
 	c.LayoutSections = make(map[string]string)
-	c.LayoutSections["footerjs"] = "menu/footerjs_edit.html"
+	c.LayoutSections["footerjs"] = "user/footerjs_edit.html"
 	c.setTpl("user/edit.html","common/layout_edit.html")
 }
 func (c *UserController) EditDo(){
