@@ -15,7 +15,7 @@ func (c *DataController) Prepare() {
 	//类似继承
 	c.BaseController.Prepare()
 	midstr := c.Ctx.Input.Param(":mid")
-	c.Data["mid"] = midstr
+	c.Data["Mid"] = midstr
 	mid,err := strconv.Atoi(midstr)
 	if nil == err && mid > 0 {
 		c.Mid = mid
