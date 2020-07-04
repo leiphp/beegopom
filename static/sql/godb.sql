@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地
+Source Server         : localhost
 Source Server Version : 50726
 Source Host           : localhost:3306
 Source Database       : godb
@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50726
 File Encoding         : 65001
 
-Date: 2020-07-04 01:11:31
+Date: 2020-07-04 19:40:08
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -26,17 +26,20 @@ CREATE TABLE `menu` (
   `seq` int(11) NOT NULL DEFAULT '0',
   `format` varchar(2048) NOT NULL DEFAULT '{}',
   PRIMARY KEY (`mid`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of menu
 -- ----------------------------
-INSERT INTO `menu` VALUES ('1', '0', '商城', '0', '{\"schema\": {\"field\":{\"type\":\"string\",\"title\":\"name\"}},\"form\":[{\"key\":\"field\"},{\"type\":\"submit\",\"title\":\"submit\"}]}');
-INSERT INTO `menu` VALUES ('2', '1', '商品管理', '0', '{\"a\":\"b\"}');
-INSERT INTO `menu` VALUES ('3', '1', '购物车', '1', '');
+INSERT INTO `menu` VALUES ('1', '0', '商城', '0', '{\"schema\":{\"name\":{\"type\":\"string\",\"title\":\"姓名\"},\"class\":{\"type\":\"number\",\"title\":\"班级\"},\"sex\":{\"type\":\"string\",\"title\":\"班级\",\"enum\":[\"unkown\",\"male\",\"female\"]}},\"form\":[{\"key\":\"name\"},{\"key\":\"sex\"},{\"key\":\"class\"}]}');
+INSERT INTO `menu` VALUES ('2', '1', '商品管理', '0', '{\"schema\":{\"name\":{\"type\":\"string\",\"title\":\"姓名\"},\"class\":{\"type\":\"number\",\"title\":\"班级\"},\"sex\":{\"type\":\"string\",\"title\":\"班级\",\"enum\":[\"unkown\",\"male\",\"female\"]}},\"form\":[{\"key\":\"name\"},{\"key\":\"sex\"},{\"key\":\"class\"}]}');
+INSERT INTO `menu` VALUES ('3', '1', '购物车', '1', '{\"schema\":{\"name\":{\"type\":\"string\",\"title\":\"姓名\"},\"class\":{\"type\":\"number\",\"title\":\"班级\"},\"sex\":{\"type\":\"string\",\"title\":\"班级\",\"enum\":[\"unkown\",\"male\",\"female\"]}},\"form\":[{\"key\":\"name\"},{\"key\":\"sex\"},{\"key\":\"class\"}]}');
 INSERT INTO `menu` VALUES ('4', '1', '会员管理', '0', '');
 INSERT INTO `menu` VALUES ('5', '0', '书城', '0', '');
 INSERT INTO `menu` VALUES ('6', '5', '图书管理', '0', '');
+INSERT INTO `menu` VALUES ('7', '0', '学生信息管理', '0', '');
+INSERT INTO `menu` VALUES ('8', '7', '班级信息', '0', '');
+INSERT INTO `menu` VALUES ('9', '7', '学生信息', '0', '');
 
 -- ----------------------------
 -- Table structure for page
@@ -67,9 +70,11 @@ CREATE TABLE `user` (
   `is_admin` tinyint(4) NOT NULL DEFAULT '0',
   PRIMARY KEY (`user_id`),
   UNIQUE KEY `user_key` (`user_key`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'aa', 'leixiaotian', '[1,5]', '12345', '1');
+INSERT INTO `user` VALUES ('1', 'aa', '雷小天', '[1,5,7]', '123456', '1');
+INSERT INTO `user` VALUES ('9', 'bb', 'bb', '[1]', 'bb', '1');
+INSERT INTO `user` VALUES ('7', 'gg', '测试', '[1,5]', '123456', '0');

@@ -38,6 +38,6 @@ func init() {
 	beego.Router("/format/editdo", &controllers.FormatController{}, "*:EditDo")
 
 	//data
-	//beego.Router("/data/?:mid", &controllers.DataController{}, "Get:Index")
-	//beego.Router("/data/list/?:mid", &controllers.DataController{}, "*:List")
+	beego.Router("/data/?:mid", &controllers.DataController{}, "Get:Index")
+	beego.Router("/data/list/?:mid", &controllers.DataController{}, "*:List")
 }

@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"github.com/astaxie/beego/orm"
 	"sort"
+	"github.com/bitly/go-simplejson"
 )
 
 type MenuModel struct {
@@ -93,7 +94,18 @@ func MenuList() ([] *MenuModel, int64){
 func ParentMenuList() []*MenuModel {
 	query := orm.NewOrm().QueryTable("menu").Filter("parent",0)
 	data := make([]*MenuModel,0)
-	query.OrderBy("-seq").All(&data)
+	query.OrderBy("-seq").Limit(1000).All(&data)
 	return data
 }
 
+func MenuFormatStruct(mid int) *simplejson.Json {
+	menu := MenuModel{Mid:mid}
+	err := orm.NewOrm().Read(&menu)
+	if nil == err {
+		jsonstruct, err2 := simplejson.NewJson([]byte(menu.Format))
+		if nil == err2 {
+			return jsonstruct
+		}
+	}
+	return nil
+}
