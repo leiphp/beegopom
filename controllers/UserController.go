@@ -29,11 +29,26 @@ func (c *UserController) List() {
 }
 
 func (c *UserController) Add(){
+	menu := models.ParentMenuList()
+	fmt.Println(menu)
+	menus := make(map[int]string)
+	for _,v := range menu{
+		menus[v.Mid] = v.Name
+	}
 
+	c.Data["Menus"] = menus
+	c.LayoutSections = make(map[string]string)
+	c.LayoutSections["footerjs"] = "user/footerjs_edit.html"
+	c.setTpl("user/add.html","common/layout_edit.html")
 }
+
 func (c *UserController) AddDo(){
-
+	var m models.UserModel
+	if err := c.ParseForm(&m); err==nil{
+		orm.NewOrm().Insert(&m)
+	}
 }
+
 func (c *UserController) Edit(){
 	userId,_ := c.GetInt("userid")
 	o := orm.NewOrm()
@@ -68,9 +83,11 @@ func (c *UserController) Edit(){
 	c.LayoutSections["footerjs"] = "user/footerjs_edit.html"
 	c.setTpl("user/edit.html","common/layout_edit.html")
 }
+
 func (c *UserController) EditDo(){
 
 }
+
 func (c *UserController) DeleteDo(){
 
 }
