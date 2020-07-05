@@ -46,3 +46,26 @@ func DataList(mid, pageSize, page int)([]map[string]interface{}, int64){
 	}
 	return dataEx,total
 }
+
+func DataRead(did int) *simplejson.Json{
+	if did <= 0 {
+		return nil
+	}
+	data := DataModel{Did:did}
+	err := orm.NewOrm().Read(&data)
+	if nil==err {
+		sj, err2 := simplejson.NewJson([]byte(data.Content))
+		if nil == err2 {
+			sj.Set("did",data.Did)
+			sj.Set("name",data.Name)
+			sj.Set("mid",data.Mid)
+			sj.Set("parent",data.Parent)
+			sj.Set("seq",data.Seq)
+			sj.Set("status",data.Status)
+			sj.Set("updatetime",data.UpdateTime)
+
+			return sj
+		}
+	}
+	return nil
+}

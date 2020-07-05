@@ -58,3 +58,103 @@ func (c *DataController) List(){
 	data,total := models.DataList(c.Mid,size,page)
 	c.listJsonResult(consts.JRCodeSucc, "ok",total,data)
 }
+
+func (c *DataController) Edit() {
+	did,_ := c.GetInt("did")
+	if did>0{
+		c.Data["Did"] = did
+	}
+
+	c.initForm(did)
+
+	c.LayoutSections = make(map[string]string)
+	c.LayoutSections["footerjs"] = "data/footerjs_edit.html"
+	c.setTpl("data/edit.html","common/layout_jfedit.html")
+}
+
+func (c *DataController) initForm(did int){
+	format := models.MenuFormatStruct(c.Mid)
+	if nil == format{
+		return
+	}
+	schemaMap := format.Get("schema")
+	formArray := format.Get("form")
+
+	//初始化数据
+	one := models.DataRead(did)
+	if nil!=one{
+		for k,_ := range schemaMap.MustMap(){
+			switch schemaMap.GetPath(k, "type").MustString() {
+			case "string":
+				schemaMap.SetPath([]string{k,"default"}, one.Get(k).MustString())
+				break
+			case "integer":
+				schemaMap.SetPath([]string{k,"default"}, one.Get(k).MustInt())
+				break
+			case "boolean":
+				schemaMap.SetPath([]string{k,"default"}, one.Get(k).MustBool())
+				break
+			}
+		}
+	}
+	//通用信息
+	schemaMap.SetPath([]string{"parent","type"},"integer")
+	schemaMap.SetPath([]string{"parent","title"},"上级数据")
+	if nil!=one{
+		schemaMap.SetPath([]string{"parent","default"},one.Get("parent").MustInt())
+	}
+
+	schemaMap.SetPath([]string{"name","type"},"string")
+	schemaMap.SetPath([]string{"name","title"},"名称")
+	if nil!=one{
+		schemaMap.SetPath([]string{"name","default"},one.Get("name").MustString())
+	}
+
+	schemaMap.SetPath([]string{"seq","type"},"string")
+	schemaMap.SetPath([]string{"seq","title"},"排序")
+	if nil!=one{
+		schemaMap.SetPath([]string{"seq","default"},one.Get("seq").MustInt())
+	}
+	schemaMap.SetPath([]string{"status","type"},"string")
+	schemaMap.SetPath([]string{"status","title"},"状态")
+	schemaMap.SetPath([]string{"status","enum"},[]int{0,1})
+	if nil!=one{
+		schemaMap.SetPath([]string{"status","default"},one.Get("status").MustInt())
+	}
+	c.Data["Schema"] = schemaMap.MustMap()
+
+	//初始化通过form
+	formarrayObj := formArray.MustArray()//formArray object
+	if len(formarrayObj) <= 0 {
+		var tmpArray []map[string]string
+		tmpArray = append(tmpArray, map[string]string{"key":"parent"})
+		tmpArray = append(tmpArray, map[string]string{"key":"name"})
+		tmpArray = append(tmpArray, map[string]string{"key":"seq"})
+		tmpArray = append(tmpArray, map[string]string{"key":"status"})
+
+		for k,_ := range schemaMap.MustMap(){
+			tmpArray = append(tmpArray, map[string]string{"key":k})
+		}
+		tmpArray = append(tmpArray, map[string]string{"type":"submit","title":"提交"})
+		c.Data["Form"] = tmpArray
+	}else{
+		var tmpArray []interface{}
+		tmpArray = append(tmpArray, map[string]string{"key":"parent"})
+		tmpArray = append(tmpArray, map[string]string{"key":"name"})
+		tmpArray = append(tmpArray, map[string]string{"key":"seq"})
+		tmpArray = append(tmpArray, map[string]string{"key":"status"})
+
+		var haveSubmit bool = false
+		for k,v := range formArray.MustArray(){
+			tmpArray = append(tmpArray,v)
+			tmp:=formArray.GetIndex(k).Get("type")
+			if "submit" == tmp.MustString(){
+				haveSubmit= true
+			}
+		}
+		if false == haveSubmit{
+			tmpArray = append(tmpArray, map[string]string{"type":"submit","title":"提交"})
+		}
+		c.Data["Form"] = tmpArray
+	}
+}
