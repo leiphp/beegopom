@@ -1,9 +1,12 @@
 package controllers
 
 import (
+	"github.com/astaxie/beego/orm"
+	"github.com/bitly/go-simplejson"
 	"lxtkj/hellobeego/consts"
 	"lxtkj/hellobeego/models"
 	"strconv"
+	"time"
 )
 
 type DataController struct {
@@ -72,6 +75,32 @@ func (c *DataController) Edit() {
 	c.setTpl("data/edit.html","common/layout_jfedit.html")
 }
 
+func (c *DataController) EditDo() {
+	did,_ := c.GetInt("did")
+	if did>0{
+		if len(c.Ctx.Input.RequestBody) >0 {
+			sj,err := simplejson.NewJson(c.Ctx.Input.RequestBody)
+			if nil == err{
+				var m models.DataModel
+				m.Content = string(c.Ctx.Input.RequestBody)
+				m.Did=did
+				m.Parent=sj.Get("parent").MustInt()
+				m.Mid=c.Mid
+				m.Name=sj.Get("name").MustString()
+				m.Seq=sj.Get("seq").MustInt()
+				int, err := strconv.Atoi(sj.Get("status").MustString())//字符串转整数
+				m.Status=int8(int)//int转int8
+				m.UpdateTime = time.Now().Unix()
+				id,err := orm.NewOrm().Update(&m)
+				if nil ==err {
+					c.jsonResult(consts.JRCodeSucc, "ok", id)
+				}
+			}
+		}
+	}
+	c.jsonResult(consts.JRCodeFailed, "",0)
+}
+
 func (c *DataController) initForm(did int){
 	format := models.MenuFormatStruct(c.Mid)
 	if nil == format{
@@ -117,7 +146,7 @@ func (c *DataController) initForm(did int){
 	}
 	schemaMap.SetPath([]string{"status","type"},"string")
 	schemaMap.SetPath([]string{"status","title"},"状态")
-	schemaMap.SetPath([]string{"status","enum"},[]int{0,1})
+	schemaMap.SetPath([]string{"status","enum"},[]string{"0","1"})
 	if nil!=one{
 		schemaMap.SetPath([]string{"status","default"},one.Get("status").MustInt())
 	}
