@@ -12,9 +12,15 @@ type BaseController struct {
 	beego.Controller
 	controllerName string
 	actionName string
+	IsLogin   bool
+	Loginuser interface{}
 }
 
 func (c *BaseController) Prepare()  {
+	//获取session
+	//loginuser := c.GetSession("user")
+	//fmt.Println("loginuser---->", loginuser)
+
 	//赋值
 	c.controllerName, c.actionName = c.GetControllerAndAction()
 	beego.Informational(c.controllerName, c.actionName)
@@ -22,9 +28,19 @@ func (c *BaseController) Prepare()  {
 	fmt.Println("beego:perpare"+c.controllerName+","+c.actionName)
 
 	user := c.auth()//验证登录
+	//获取sessionc
+	if user != (models.UserModel{}) {//通过判断struct是否初始化，判断user是否为空
+		c.IsLogin = true
+		c.Loginuser = user
+	}else {
+		c.IsLogin = false
+		c.Loginuser = models.UserModel{}
+	}
+
 	//c.Data["Menu"] = models.MenuStruct()
 	c.Data["Menu"] = models.MenuTreeStruct(user)
-
+	c.Data["IsLogin"] = c.IsLogin
+	c.Data["LoginUser"] = c.Loginuser
 }
 
 //设置模板
