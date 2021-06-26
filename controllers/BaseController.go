@@ -71,6 +71,7 @@ func (c *BaseController) auth() models.UserModel {
 		c.StopRun()
 		return models.UserModel{}
 	} else {
+		fmt.Println("get user:",user.(models.UserModel))
 		return user.(models.UserModel)
 	}
 }

@@ -22,7 +22,7 @@ func (c *LoginController) Index(){
 		if len(userkey) > 0 && len(password) >0 {
 			//password := utils.Md5([]byte(password))//通过utils工具md5密码加密
 			user := models.GetUserByName(userkey)
-			fmt.Println(user)
+			fmt.Println("set user:", user)
 			if password == user.PassWord{//跟数据库总加密后的密码做比较
 				c.SetSession("user",user)
 				c.Redirect("/",302)
@@ -31,4 +31,12 @@ func (c *LoginController) Index(){
 		}
 	}
 	c.TplName = "login/index.html"
+}
+
+//退出登录
+func (c *LoginController) Logout(){
+	method := c.Ctx.Request.Method
+	fmt.Println(method)
+	c.DelSession("user")
+	c.Redirect("/",302)
 }

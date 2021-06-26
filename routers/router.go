@@ -32,6 +32,7 @@ func init() {
 
 	//login
 	beego.Router("/login", &controllers.LoginController{}, "*:Index")
+	beego.Router("/logout", &controllers.LoginController{}, "*:Logout")
 
 	//format
 	beego.Router("/format/edit", &controllers.FormatController{}, "Get:Edit")
