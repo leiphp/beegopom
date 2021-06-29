@@ -12,6 +12,6 @@ require (
 	github.com/patrickmn/go-cache v2.1.0+incompatible
 	github.com/shiena/ansicolor v0.0.0-20151119151921-a422bbe96644 // indirect
 	github.com/smartystreets/goconvey v1.6.4
-	golang.org/x/text v0.3.2 // indirect
+	golang.org/x/oauth2 v0.0.0-20210622215436-a8dc77f794b6
 	gopkg.in/yaml.v2 v2.3.0 // indirect
 )

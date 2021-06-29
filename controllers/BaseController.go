@@ -1,10 +1,13 @@
 package controllers
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/astaxie/beego"
-	"lxtkj/hellobeego/models"
+	"io/ioutil"
 	"lxtkj/hellobeego/consts"
+	"lxtkj/hellobeego/models"
+	"net/http"
 	"strings"
 )
 
@@ -26,6 +29,9 @@ func (c *BaseController) Prepare()  {
 	beego.Informational(c.controllerName, c.actionName)
 	//TODO 保存用户数据
 	fmt.Println("beego:perpare"+c.controllerName+","+c.actionName)
+	//检查sso令牌access_token
+	//tokenMap := c.checkToken()
+	//fmt.Println("tokenMap",tokenMap)
 
 	user := c.auth()//验证登录
 	//获取sessionc
@@ -82,12 +88,55 @@ func (c *BaseController) listJsonResult(code consts.JsonResultCode, msg string, 
 
 func (c *BaseController) auth() models.UserModel {
 	user := c.GetSession("user")
+	fmt.Println("user",user)
 	if user == nil {
 		c.Redirect("/login", 302)
+		//c.Redirect("http://localhost:9096/authorize?client_id=test_client_3&response_type=code&scope=all&state=xyz&redirect_uri=http://localhost:8080/login", 302)//authorization_code才需要到认证中心授权
 		c.StopRun()
 		return models.UserModel{}
 	} else {
 		fmt.Println("get user:",user.(models.UserModel))
 		return user.(models.UserModel)
+	}
+}
+
+//效验sso分发的access_token有效性
+func (c *BaseController) checkToken() interface{} {
+	oauth_token := c.GetSession("oauth_token")
+	fmt.Println("oauth_token",oauth_token)
+	if oauth_token != nil {
+		req, err := http.NewRequest(http.MethodGet, "http://localhost:9096/test", nil)
+		//req.Header.Set("Content-Type", "application/x-www-form-urlencoded")
+		req.Header.Set("Content-Type","application/x-www-form-urlencoded")
+		//req.BasicAuth()
+		req.Header.Set("Authorization","Bearer "+oauth_token.(string))
+		client := &http.Client{}
+		resp, err := client.Do(req)
+		if err != nil {
+			fmt.Println(err)
+			return ""
+		}
+		defer resp.Body.Close()
+		bs, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			fmt.Println(err)
+			return ""
+		}
+		fmt.Println("resp str:",string(bs))//invalid access token
+		m := make(map[string]interface{})
+		err = json.Unmarshal(bs, &m)
+		if err != nil {
+			fmt.Println("Umarshal failed:", err)//Umarshal failed: invalid character 'i' looking for beginning of value
+			c.Redirect("/login", 302)
+			//c.Redirect("http://localhost:9096/authorize?client_id=test_client_3&response_type=code&scope=all&state=xyz&redirect_uri=http://localhost:8080/login", 302)//authorization_code才需要到认证中心授权
+			c.StopRun()
+		}
+		fmt.Println("map:", m)//map: map[client_id:test_client_3 domain:http://localhost:8080 expires_in:7199 scope:all user_id:admin]
+		return m
+	} else {
+		c.Redirect("/login", 302)
+		//c.Redirect("http://localhost:9096/authorize?client_id=test_client_3&response_type=code&scope=all&state=xyz&redirect_uri=http://localhost:8080/login", 302)//authorization_code才需要到认证中心授权
+		c.StopRun()
+		return ""
 	}
 }
